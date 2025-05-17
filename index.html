@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Harshita Rai Portfolio</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+  :root {
+    --bg-color: #fff5e1; /* cream color */
+    --primary-color: #5c3a21; /* brown */
+    --accent-color: #7a5230;
+    --text-color: #3a2e2e;
+    --shadow-color: rgba(92, 58, 33, 0.15);
+    --border-radius: 12px;
+    --transition-speed: 0.3s;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0 24px 40px 24px;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  header {
+    padding: 80px 0 40px 0;
+    text-align: center;
+    animation: fadeInDown 0.8s ease forwards;
+    border-bottom: 2px solid var(--primary-color);
+  }
+
+  header h1 {
+    font-weight: 700;
+    font-size: 3.8rem;
+    color: var(--primary-color);
+    margin: 0;
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+  }
+
+  #photo-section {
+    max-width: 280px;
+    margin: 40px auto 60px auto;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 12px 25px rgba(92,58,33,0.3);
+    animation: fadeInUp 1s ease forwards;
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  #photo-section img {
+    width: 100%;
+    display: block;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: drop-shadow(0 0 0.45rem rgba(92,58,33,0.2));
+  }
+
+  main {
+    flex-grow: 1;
+    max-width: 850px;
+    margin: 0 auto;
+  }
+
+  section {
+    background: #fff9f7;
+    border-radius: var(--border-radius);
+    padding: 30px 35px;
+    margin-bottom: 50px;
+    box-shadow: 0 8px 22px var(--shadow-color);
+    color: var(--primary-color);
+    opacity: 0;
+    transform: translateY(30px);
+    animation-fill-mode: forwards;
+    animation-name: fadeInUp;
+    animation-duration: 0.8s;
+  }
+
+  section:nth-of-type(1) { animation-delay: 0.4s; }
+  section:nth-of-type(2) { animation-delay: 0.7s; }
+  section:nth-of-type(3) { animation-delay: 1s; }
+  section:nth-of-type(4) { animation-delay: 1.3s; }
+  section:nth-of-type(5) { animation-delay: 1.6s; }
+  section:nth-of-type(6) { animation-delay: 1.9s; }
+  section:nth-of-type(7) { animation-delay: 2.2s; }
+  section:nth-of-type(8) { animation-delay: 2.5s; }
+
+  h2 {
+    margin-top: 0;
+    font-size: 2.4rem;
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 10px;
+    margin-bottom: 24px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  ul.skills-list {
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  ul.skills-list li {
+    background: var(--primary-color);
+    color: var(--bg-color);
+    padding: 10px 22px;
+    border-radius: 26px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color var(--transition-speed);
+    cursor: default;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  }
+  ul.skills-list li:hover {
+    background-color: var(--accent-color);
+  }
+
+  .skill-bars {
+    margin-top: 20px;
+  }
+
+  .skill-bar {
+    margin-bottom: 24px;
+  }
+
+  .skill-bar-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: var(--primary-color);
+  }
+
+  .skill-bar-bg {
+    width: 100%;
+    background-color: #f0e6df;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 22px;
+  }
+
+  .skill-bar-fill {
+    height: 100%;
+    background-color: var(--primary-color);
+    width: 0;
+    border-radius: 20px;
+    transition: width 1.6s ease-in-out;
+    box-shadow: 0 0 6px var(--primary-color);
+  }
+
+  .skill-bar-fill.fill-js {
+    width: 90%;
+  }
+  .skill-bar-fill.fill-html {
+    width: 85%;
+  }
+  .skill-bar-fill.fill-node {
+    width: 75%;
+  }
+  .skill-bar-fill.fill-react {
+    width: 80%;
+  }
+  .skill-bar-fill.fill-uiux {
+    width: 70%;
+  }
+
+  ul {
+    padding-left: 1.15rem;
+  }
+
+  ul li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+
+  a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color var(--transition-speed);
+  }
+  a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+  }
+
+  footer {
+    text-align: center;
+    padding: 25px 10px;
+    color: var(--primary-color);
+    font-size: 0.95rem;
+    border-top: 2px solid var(--accent-color);
+    font-weight: 600;
+  }
+
+  /* Animations */
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    body {
+      padding: 0 14px 40px 14px;
+    }
+    header h1 {
+      font-size: 2.8rem;
+    }
+    #photo-section {
+      max-width: 180px;
+      margin: 30px auto 50px auto;
+    }
+    main {
+      max-width: 100%;
+    }
+    section {
+      padding: 20px 20px;
+    }
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 16px;
+    }
+    ul.skills-list {
+      gap: 10px;
+    }
+    ul.skills-list li {
+      font-size: 0.95rem;
+      padding: 8px 16px;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Harshita Rai</h1>
+</header>
+
+<div id="photo-section" aria-label="Profile photo of Harshita Rai">
+  <img src="https://via.placeholder.com/300x300.png?text=Harshita+Rai" alt="Harshita Rai" />
+</div>
+
+<main>
+  <section>
+    <h2>About Me</h2>
+    <p>Hello! I'm Harshita Rai, a passionate developer and creative thinker who loves crafting beautiful and functional web experiences. I specialize in full-stack development and UI/UX design, striving to build engaging and accessible applications.</p>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <strong>Proficiency Levels:</strong>
+    <div class="skill-bars">
+      <div class="skill-bar" aria-label="JavaScript skill level 90 percent">
+        <div class="skill-bar-name">JavaScript</div>
+        <div class="skill-bar-bg">
+          <div class="skill-bar-fill fill-js"></div>
+        </div>
+      </div>
+      <div class="skill-bar" aria-label="HTML5 and CSS3 skill level 85 percent">
+        <div class="skill-bar-name">HTML5 &amp; CSS3</div>
+        <div class="skill-bar-bg">
+          <div class="skill-bar-fill fill-html"></div>
+        </div>
+      </div>
+      <div class="skill-bar" aria-label="Node.js skill level 75 percent">
+        <div class="skill-bar-name">Node.js</div>
+        <div class="skill-bar-bg">
+          <div class="skill-bar-fill fill-node"></div>
+        </div>
+      </div>
+      <div class="skill-bar" aria-label="React skill level 80 percent">
+        <div class="skill-bar-name">React</div>
+        <div class="skill-bar-bg">
+          <div class="skill-bar-fill fill-react"></div>
+        </div>
+      </div>
+      <div class="skill-bar" aria-label="UI/UX Design skill level 70 percent">
+        <div class="skill-bar-name">UI/UX Design</div>
+        <div class="skill-bar-bg">
+          <div class="skill-bar-fill fill-uiux"></div>
+        </div>
+      </div>
+    </div>
+    <ul class="skills-list" style="margin-top: 36px;">
+      <li>Python</li>
+      <li>Other Technologies</li>
+      <li>Soft Skills</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <p>I am currently pursuing my Bachelor of Technology (BTech) degree at <strong>Techno India University</strong>, where I am refining my skills and gaining in-depth knowledge in computer science and engineering.</p>
+  </section>
+
+  <section>
+    <h2>Achievements</h2>
+    <ul>
+      <li>2nd Place at State-Level Coding Competition</li>
+      <li>Developed a full-stack community project with 100+ active users</li>
+      <li>Contributor to several popular open-source projects on GitHub</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Work Experience</h2>
+    <ul>
+      <li><strong>Intern Developer</strong> at XYZ Solutions (June 2023 - Aug 2023)
+        <ul>
+          <li>Developed responsive React components improving UI consistency</li>
+          <li>Collaborated with designers to enhance user experience and accessibility</li>
+        </ul>
+      </li>
+      <li><strong>Freelance Web Developer</strong> (2022 - Present)
+        <ul>
+          <li>Created custom websites and applications for local businesses</li>
+          <li>Optimized website performance and search engine visibility</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Certifications</h2>
+    <ul>
+      <li>Full Stack Web Development - Coursera</li>
+      <li>Advanced JavaScript Concepts - Udemy</li>
+      <li>UI/UX Design Fundamentals - LinkedIn Learning</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Professional Skills</h2>
+    <ul>
+      <li>Problem Solving</li>
+      <li>Effective Communication</li>
+      <li>Team Collaboration</li>
+      <li>Agile Methodologies</li>
+      <li>Time Management</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  &copy; 2024 Harshita Rai
+</footer>
+
+<script>
+  // Animate skill bars after page load
+  window.addEventListener('load', () => {
+    document.querySelectorAll('.skill-bar-fill').forEach(bar => {
+      bar.style.width = bar.classList.contains('fill-js') ? '90%' :
+                        bar.classList.contains('fill-html') ? '85%' :
+                        bar.classList.contains('fill-node') ? '75%' :
+                        bar.classList.contains('fill-react') ? '80%' :
+                        bar.classList.contains('fill-uiux') ? '70%' : '0';
+    });
+  });
+</script>
+</body>
+</html>
